@@ -1,0 +1,24 @@
+<!-- DOCTYPE html -->
+
+<html>
+
+<body>
+
+<h1> This is from the index html in templates! {{ title }} is working!</h1>
+
+{% for obj in object_list %}
+
+
+{% url "posts:detail" pk=obj.pk %}
+<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>
+{{ obj.content }}<br/>
+{{ obj.timestamp }}<br/>
+{{ obj.last_updated }}<br/>
+{{ obj.id }}<br/>
+{{ obj.pk }}<br/>
+
+{% endfor %}
+
+</body>
+
+</html>

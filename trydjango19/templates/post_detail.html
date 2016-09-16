@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block head_title %} {{ instance.title }} | {{ block.super }} {% endblock head_title %}
+
+
+{% block content %}
+<div class='col-sm-8 col-sm-offset-2'>
+
+<h1> {{ title }} <small> {{ instance.timestamp }} </small> </h1>
+
+{{ instance.content|linebreaks }}<br/>
+<br/>
+
+{% if instance.image %}
+<img src="{{instance.image.url}}" class="img-responsive" />
+{% endif %}
+
+<a href='/posts/'>Go back to posts</a><br/>
+</div>
+{% endblock content %}
